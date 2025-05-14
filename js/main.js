@@ -89,4 +89,81 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
+});
+
+// Chat Widget Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const chatButton = document.getElementById('chatButton');
+    const chatContainer = document.getElementById('chatContainer');
+    const closeChat = document.getElementById('closeChat');
+    const chatInput = document.getElementById('chatInput');
+    const sendMessage = document.getElementById('sendMessage');
+    const chatMessages = document.getElementById('chatMessages');
+
+    // Toggle chat window
+    chatButton.addEventListener('click', () => {
+        chatContainer.classList.toggle('active');
+    });
+
+    closeChat.addEventListener('click', () => {
+        chatContainer.classList.remove('active');
+    });
+
+    // Simple bot responses
+    const botResponses = {
+        'hello': 'Hello! How can I help you today?',
+        'hi': 'Hi there! How can I assist you?',
+        'help': 'I can help you with:\n- Project inquiries\n- Scheduling consultations\n- General questions\nWhat would you like to know?',
+        'project': 'We offer both commercial and residential construction services. Would you like to know more about either?',
+        'commercial': 'Our commercial services include office buildings, retail spaces, and industrial facilities. Would you like to schedule a consultation?',
+        'residential': 'We specialize in custom homes, renovations, and residential developments. Would you like to see our portfolio?',
+        'contact': 'You can reach us at:\nPhone: (555) 123-4567\nEmail: info@buildright.com\nOr fill out the contact form on our website.',
+        'price': 'Our pricing varies based on project scope and requirements. Would you like to schedule a consultation for a detailed quote?',
+        'default': 'I apologize, but I don\'t have information about that. Would you like to speak with a human representative? You can call us at (555) 123-4567.'
+    };
+
+    // Function to add a message to the chat
+    function addMessage(message, isUser = false) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+        messageDiv.innerHTML = `<p>${message}</p>`;
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // Function to get bot response
+    function getBotResponse(message) {
+        message = message.toLowerCase();
+        for (let key in botResponses) {
+            if (message.includes(key)) {
+                return botResponses[key];
+            }
+        }
+        return botResponses.default;
+    }
+
+    // Handle sending messages
+    function handleSendMessage() {
+        const message = chatInput.value.trim();
+        if (message) {
+            addMessage(message, true);
+            chatInput.value = '';
+            
+            // Simulate bot typing delay
+            setTimeout(() => {
+                const response = getBotResponse(message);
+                addMessage(response);
+            }, 1000);
+        }
+    }
+
+    // Send message on button click
+    sendMessage.addEventListener('click', handleSendMessage);
+
+    // Send message on Enter key
+    chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            handleSendMessage();
+        }
+    });
 }); 
