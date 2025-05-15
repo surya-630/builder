@@ -265,11 +265,30 @@ section h2:after {
 /* Social Links */
 .social-links a {
     color: var(--primary-color);
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--gray-100);
+    text-decoration: none !important;
 }
 
 .social-links a:hover {
-    color: var(--secondary-color);
+    color: var(--white);
+    background: var(--primary-color);
+    transform: translateY(-3px);
+    text-decoration: none !important;
+}
+
+.social-links .fa-2x {
+    font-size: 1.5rem;
+}
+
+.social-links .fa-brands {
+    font-size: 1.5rem;
 }
 
 /* Footer */
@@ -550,4 +569,38 @@ blockquote-footer, .blockquote-footer {
     .testimonial-next {
         right: 5px;
     }
+}
+
+/* Map Container */
+.map-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    border-radius: 8px;
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Contact Cards */
+#contact .card {
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+#contact .card:hover {
+    transform: translateY(-5px);
+}
+
+#contact .card-title {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
 } 
