@@ -1,84 +1,126 @@
 /* General Styles */
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #3498db;
-    --accent-color: #e74c3c;
-    --text-color: #333;
-    --light-bg: #f8f9fa;
+    --primary-color: #1a365d;    /* Deep navy blue - professional and trustworthy */
+    --secondary-color: #2b6cb0;  /* Bright blue - engaging but professional */
+    --accent-color: #F6C343;     /* Gold for highlights */
+    --text-color: #2d3748;       /* Dark gray - for better readability */
+    --light-bg: #f7fafc;         /* Light gray - for backgrounds */
+    --white: #ffffff;
+    --gray-100: #f7fafc;
+    --gray-200: #edf2f7;
+    --gray-300: #e2e8f0;
+    --gray-400: #cbd5e0;
+    --gray-500: #a0aec0;
+    --gray-600: #718096;
+    --gray-700: #4a5568;
+    --gray-800: #2d3748;
+    --gray-900: #1a202c;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--text-color);
     line-height: 1.6;
+    background: var(--light-bg);
 }
 
 /* Hero Section */
 .hero-section {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                url('https://via.placeholder.com/1920x1080') center/cover no-repeat;
+    background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.85)),
+                url('../projects-images/FB_IMG_1744455079203.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     text-align: center;
     padding-top: 80px;
 }
 
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section .lead {
+    font-size: 1.5rem;
+    color: var(--gray-200);
+    margin-bottom: 2rem;
+}
+
 /* Navigation */
 .navbar {
     transition: all 0.3s ease;
+    background-color: var(--primary-color);
+    padding: 1rem 0;
 }
 
 .navbar-brand {
-    font-weight: bold;
+    font-weight: 700;
     font-size: 1.5rem;
+    color: var(--white) !important;
+}
+
+.logo-img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
 }
 
 .nav-link {
     font-weight: 500;
     padding: 0.5rem 1rem !important;
+    color: var(--gray-200) !important;
     transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-    color: var(--secondary-color) !important;
+    color: var(--white) !important;
 }
 
 /* Cards */
 .card {
     border: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(26,54,93,0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Buttons */
 .btn-primary {
     background-color: var(--secondary-color);
     border-color: var(--secondary-color);
-    padding: 0.5rem 1.5rem;
-    font-weight: 500;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    border-radius: 4px;
     transition: all 0.3s ease;
+    color: var(--white);
 }
 
 .btn-primary:hover {
-    background-color: #2980b9;
-    border-color: #2980b9;
-    transform: translateY(-2px);
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--accent-color);
 }
 
 /* Sections */
 section {
-    padding: 80px 0;
+    padding: 100px 0;
 }
 
 section h2 {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     position: relative;
     padding-bottom: 15px;
+    color: var(--primary-color);
+    font-weight: 700;
 }
 
 section h2:after {
@@ -87,9 +129,10 @@ section h2:after {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 50px;
-    height: 3px;
+    width: 80px;
+    height: 4px;
     background-color: var(--secondary-color);
+    border-radius: 2px;
 }
 
 /* Gallery */
@@ -100,86 +143,123 @@ section h2:after {
 
 .gallery-item .card {
     height: 100%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.gallery-item .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .gallery-item .card-img-top {
-    height: 200px;
+    height: 250px;
     object-fit: cover;
 }
 
 .gallery-item .badge {
     font-size: 0.8rem;
     padding: 0.5em 1em;
+    border-radius: 4px;
+    background: var(--accent-color);
+    color: var(--primary-color);
+    font-weight: 700;
 }
 
 .gallery-item .card-title {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
 }
 
 .gallery-item .card-text {
-    font-size: 0.9rem;
-    color: #666;
-}
-
-.gallery-item .btn-group {
-    margin-bottom: 2rem;
-}
-
-.gallery-item .btn-group .btn {
-    border-radius: 20px;
-    margin: 0 5px;
-    padding: 0.5rem 1.5rem;
-}
-
-.gallery-item .btn-group .btn.active {
-    background-color: var(--secondary-color);
-    color: white;
-}
-
-/* Gallery Animation */
-.gallery-item.fade-in {
-    animation: fadeInUp 0.5s ease-out;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    font-size: 0.95rem;
+    color: var(--gray-600);
 }
 
 /* Testimonials */
+.testimonial-carousel {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.testimonial-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.testimonial-slide {
+    flex: 0 0 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.testimonial-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.testimonial-nav:hover {
+    background: var(--secondary-color);
+}
+
+.testimonial-prev {
+    left: 10px;
+}
+
+.testimonial-next {
+    right: 10px;
+}
+
+.testimonial-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.testimonial-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gray-300);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.testimonial-dot.active {
+    background: var(--primary-color);
+}
+
 .testimonial-card {
-    background-color: white;
+    background-color: var(--white);
     border-radius: 8px;
-    padding: 20px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    max-width: 600px;
 }
 
 .testimonial-card .fa-star {
-    color: #f1c40f;
+    color: #f6ad55;
 }
 
 /* Contact Form */
 .form-control {
     padding: 12px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--gray-300);
     border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
 .form-control:focus {
     border-color: var(--secondary-color);
-    box-shadow: none;
+    box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.1);
 }
 
 /* Social Links */
@@ -195,37 +275,14 @@ section h2:after {
 /* Footer */
 footer {
     background-color: var(--primary-color);
+    color: var(--gray-200);
+    padding: 4rem 0 2rem;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hero-section {
-        height: 70vh;
-    }
-    
-    section {
-        padding: 40px 0;
-    }
-    
-    .navbar-brand {
-        font-size: 1.2rem;
-    }
-}
-
-/* Animations */
-.fade-in {
-    animation: fadeIn 1s ease-in;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+footer h5 {
+    color: var(--white);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
 }
 
 /* Chat Widget Styles */
@@ -364,5 +421,133 @@ footer {
         width: calc(100% - 40px);
         height: 60vh;
         bottom: 90px;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 70vh;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    section {
+        padding: 60px 0;
+    }
+    
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
+    .logo-img {
+        height: 45px;
+    }
+    
+    .navbar-brand span {
+        font-size: 1.2rem;
+    }
+}
+
+/* Our Design Cards */
+.design-card {
+    background: var(--primary-color);
+    color: var(--white);
+    border-radius: 8px;
+    padding: 1.5rem 1rem 1rem 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(26,54,93,0.06);
+}
+.design-card .design-number {
+    font-size: 2rem;
+    font-weight: 700;
+    background: var(--secondary-color);
+    color: var(--white);
+    border-radius: 4px;
+    padding: 0.25em 0.75em;
+    margin-right: 1rem;
+    display: inline-block;
+}
+
+/* Testimonial Client Name */
+blockquote-footer, .blockquote-footer {
+    color: var(--white) !important;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.highlight-box {
+    background: var(--accent-color);
+    color: var(--primary-color);
+    font-weight: 700;
+    border-radius: 0;
+}
+
+/* Happy Customers Section Styles */
+.counter-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.counter-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.counter-icon {
+    color: rgba(255, 255, 255, 0.9);
+    transition: transform 0.3s ease;
+}
+
+.counter-card:hover .counter-icon {
+    transform: scale(1.1);
+}
+
+.counter-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.counter-card p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+/* Add animation for counter numbers */
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.counter-value.animated {
+    animation: countUp 0.5s ease-out forwards;
+}
+
+@media (max-width: 768px) {
+    .testimonial-nav {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .testimonial-prev {
+        left: 5px;
+    }
+    
+    .testimonial-next {
+        right: 5px;
     }
 } 
