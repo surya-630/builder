@@ -24,8 +24,8 @@ A modern, responsive website for a construction company specializing in both com
 ## Structure
 
 - `index.html` - Main website file
-- `css/` - Stylesheets
-- `js/` - JavaScript files
+- `css-00/` - Stylesheets
+- `js-00/` - JavaScript files
 - `images/` - Image assets
 - `commercial/` - Commercial projects section
 - `residential/` - Residential projects section

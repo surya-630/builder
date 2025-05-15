@@ -28,7 +28,7 @@ body {
 .hero-section {
     height: 100vh;
     background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.85)),
-                url('../projects-images/FB_IMG_1744455079203.jpg') center/cover no-repeat;
+                url('../projects-images-00/FB_IMG_1744455079203.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     text-align: center;
